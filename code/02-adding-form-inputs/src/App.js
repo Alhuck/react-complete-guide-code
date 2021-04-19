@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
-const App = () => {
-  const expenses = [
+const DUMMY_EXPENSES = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -26,16 +25,19 @@ const App = () => {
     },
   ];
 
-  // return React.createElement(
-  //   'div',
-  //   {},
-  //   React.createElement('h2', {}, "Let's get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
+
+const App = () => {
+
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
+  const getNewExpenseForm = (newExpense) => {
+    
+    setExpenses(preExpenses => [newExpense, ...preExpenses])
+  }
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense formSubmit={getNewExpenseForm}/>
       <Expenses items={expenses} />
     </div>
   );

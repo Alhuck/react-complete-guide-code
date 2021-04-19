@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
   // let expenseForm = {
   //   cost: 0,
@@ -23,7 +23,8 @@ const ExpenseForm = () => {
       date: date
     }
 
-    console.log(expenseForm);
+    // console.log(expenseForm);
+    props.formSubmit(expenseForm);
   }
 
   const setExpenseTitle = (e)=>  {
