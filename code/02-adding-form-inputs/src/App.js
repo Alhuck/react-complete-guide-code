@@ -31,14 +31,13 @@ const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const getNewExpenseForm = (newExpense) => {
-    
     setExpenses(preExpenses => [newExpense, ...preExpenses])
   }
 
   return (
     <div>
       <NewExpense formSubmit={getNewExpenseForm}/>
-      <Expenses items={expenses} />
+      <Expenses items={expenses}/>
     </div>
   );
 }
