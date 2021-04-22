@@ -25,6 +25,7 @@ const ExpenseForm = (props) => {
 
     // console.log(expenseForm);
     props.formSubmit(expenseForm);
+    props.showForm(false);
   }
 
   const setExpenseTitle = (e)=>  {
@@ -37,6 +38,10 @@ const ExpenseForm = (props) => {
 
   const setExpenseDate = (e) => {
     setDate(e.target.value);
+  }
+
+  const setShowFormTrue = () => {
+    props.showForm(false);
   }
 
   return (
@@ -57,6 +62,7 @@ const ExpenseForm = (props) => {
       </div>
       <div className='new-expense__actions'>
         <button type='submit'>Add Expense</button>
+        <button onClick={setShowFormTrue}> Cancel </button>
       </div>
     </form>
   );

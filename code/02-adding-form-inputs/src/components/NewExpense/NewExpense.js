@@ -11,9 +11,13 @@ const NewExpense = (props) => {
     props.formSubmit(expenseForm);
   }
 
+  const setShowFormTrue = (status) => {
+    props.showForm(status);
+  } 
+
   return (
     <div className='new-expense'>
-      <ExpenseForm formSubmit = {getFormSubmitDetails}/>
+      <ExpenseForm showForm = {setShowFormTrue} formSubmit = {getFormSubmitDetails}/>
     </div>
   );
 };
