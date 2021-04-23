@@ -18,9 +18,10 @@ const ExpenseForm = (props) => {
     e.preventDefault();
 
     const expenseForm = {
+      id: Math.random(),
       title: title,
       cost: cost,
-      date: date
+      date: new Date(date)
     }
 
     // console.log(expenseForm);
